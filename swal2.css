@@ -1,0 +1,41 @@
+
+div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
+
+    background-color: var(--colorSecundario);
+  
+    }
+  
+    .swal2-popup.swal2-modal.swal2-icon-info.swal2-show {
+    background-color: var(--colorFondo);
+    }
+  
+    .swal2-popup.swal2-modal.swal2-show {
+    background-color: var(--colorFondo);
+    color: var(--colorLetra);
+    }
+  
+    div:where(.swal2-container) .swal2-html-container {
+    overflow: hidden;
+  
+    }
+  
+  
+    div:where(.swal2-container) .swal2-input {
+      height: 2.625em;
+      padding: 0;
+  }
+
+  div:where(.swal2-container) button:where(.swal2-styled).swal2-deny {
+
+    background-color: var(--colorSecundario);
+  
+    }
+
+    div:where(.swal2-container) .swal2-html-container {
+     font-size: 1em;
+  
+  }
+
+  input:where(.swal2-input), div:where(.swal2-container) input:where(.swal2-file), div:where(.swal2-container) textarea:where(.swal2-textarea), div:where(.swal2-container) select:where(.swal2-select), div:where(.swal2-container) div:where(.swal2-radio), div:where(.swal2-container) label:where(.swal2-checkbox) {
+    margin: 0px !important;
+}

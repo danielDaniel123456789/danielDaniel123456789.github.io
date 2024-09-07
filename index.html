@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="format-detection" content="telephone=no">
+
+ 
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="swal2.css">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+
+
+ <title>Ventas</title>
+ <script src="./sweetalert2.all.min.js"></script>
+</head>
+
+<body>
+    
+
+    <a href="#"  onclick="contacto()" id="contacto"> <i class="fa fa-user-circle-o" aria-hidden="true"></i> Contactar</a>
+            
+    <div  id="cargarRegistro">
+        <button onclick="cargarRegistro()" class="btnRegistrame" >Iniciar</button>
+   </div>
+
+    <div id="contenido" >
+         
+        <header id="header">
+             <div class="flex">
+               
+                <div>
+                    <button onclick="stopAudio()"> <i class="fa fa-stop-circle fa-2x" aria-hidden="true"></i> Stop</button>
+                </div>
+                <div>
+                    <button onclick="playLectura()" id="playLectura"> <i class="fa fa-music fa-2x" aria-hidden="true"></i> Reproducir</button>
+
+                    <button onclick="detenerTodo()" style="display: none;" id="detenerTodo"><i class="fa fa-microphone-slash fa-2x" aria-hidden="true"></i> Detener</button>
+                </div>
+        
+                <button  onclick="insertarNuevaVaca()"> <i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i> Insertar</button>
+               
+            </div>
+            
+        
+         
+            
+           
+           <div class="p-2">
+            <input type="text" id="searchInput"  placeholder="Buscar " onkeyup="buscarVaca()">
+           </div>
+                
+               
+            
+        </header>
+        
+        <div class="container" id="vacasContainer">
+            <!-- Las vacas se agregarán aquí -->
+        </div>
+        
+    
+        
+       
+        
+        
+    </div>
+
+
+    
+    <script src="./dataBase.js"></script>
+    <script src="./sonidos.js"></script>
+  <script src="./script.js"></script>
+  <script src="./cargarVacas.js"></script>
+  <script src="./getRandomCode.js"></script>
+  <script src="./verificarPrueba.js"></script>
+  <script src="./periodo_prueba.js"></script>
+  <script src="./sonidoCorrecto.js"></script>
+  <script src="./guardarVaca.js"></script>
+  <script src="./insertadoCorrectamente.js"></script>
+  <script src="./sonidoVaca.js"></script>
+  <script src="./verificarFechasPrenada.js"></script>
+  <script src="./sonidoCampana.js"></script>
+  <script src="./eliminarFila.js"></script>
+  <script src="./sonidoEliminado.js"></script>
+  <script src="./descargartxt.js"></script>
+  <script src="./confirmarEliminarFila.js"></script>
+  <script src="./editarDatos.js"></script>
+
+  <script src="./capitalizarPrimeraLetra.js"></script>
+  <script src="./insertarNuevaVaca.js"></script>
+  <script src="./importarVacasJSON.js"></script>
+  <script src="./insertarGasto.js"></script>
+  <script src="./mostrarDetallesGastos.js"></script>
+  
+
+  <script src="./play.js"></script>
+  <script src="./audio.js"></script>
+  <script src="./cargarRegistro.js"></script>
+  <script src="./playLectura.js"></script>
+  <script src="./contacto.js"></script>
+  
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de Síntesis de Voz</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <button onclick="play('Hola mundo')">Reproducir</button>
+    <button onclick="stop()">Detener</button>
+
+    <script>
+        let currentUtterance = null; // Variable global para almacenar la instancia actual de SpeechSynthesisUtterance
+        let isPlaying = false; // Variable global para verificar si está en reproducción
+
+        function play(nombre) {
+            alert('hola');
+            if ('speechSynthesis' in window) {
+                alert('SpeechSynthesis está disponible');
+            } else {
+                alert('SpeechSynthesis no está disponible');
+            }
+
+            // Detener la reproducción anterior si existe
+            if (currentUtterance) {
+                window.speechSynthesis.cancel();
+            }
+
+            // Crear una función para reproducir el texto continuamente
+            function speakContinuously(text) {
+                if (isPlaying && text) {
+                    // Crear un nuevo objeto SpeechSynthesisUtterance
+                    currentUtterance = new SpeechSynthesisUtterance(text);
+                    
+                    // Configura algunas opciones (opcional)
+                    currentUtterance.lang = 'es-ES'; // Puedes cambiar esto a otro idioma si es necesario
+                    currentUtterance.pitch = 1; // Ajusta el tono
+                    currentUtterance.rate = 1; // Ajusta la velocidad
+                    
+                    // Reproduce el texto
+                    window.speechSynthesis.speak(currentUtterance);
+
+                    // Configura el evento onend para continuar la reproducción
+                    currentUtterance.onend = () => {
+                        if (isPlaying) {
+                            speakContinuously(text);
+                        }
+                    };
+
+                    // Mensaje de depuración
+                    console.log(`Reproduciendo: ${text}`);
+                }
+            }
+
+            // Iniciar la reproducción continua
+            isPlaying = true;
+            speakContinuously(nombre);
+
+            // Mostrar el botón Stop y ocultar el botón Play
+            toggleButtons(false);
+        }
+
+        function stop() {
+            // Detener la reproducción
+            if (currentUtterance) {
+                window.speechSynthesis.cancel();
+                currentUtterance = null;
+            }
+
+            // Detener la reproducción continua
+            isPlaying = false;
+
+            // Ocultar el botón Stop y mostrar el botón Play
+            toggleButtons(true);
+            
+            // Mensaje de depuración
+            console.log('Reproducción detenida');
+        }
+
+        function toggleButtons(showPlay) {
+            // Mostrar/Ocultar los botones de reproducción y detención
+            document.querySelector('button[onclick="play(\'Hola mundo\')"]').style.display = showPlay ? 'inline-block' : 'none';
+            document.querySelector('button[onclick="stop()"]').style.display = showPlay ? 'none' : 'inline-block';
+        }
+
+        // Inicialmente, mostrar el botón Play y ocultar el botón Stop
+        toggleButtons(true);
+    </script>
+</body>
+</html>
