@@ -2,12 +2,7 @@ let currentUtterance = null; // Variable global para almacenar la instancia actu
 let isPlaying = false; // Variable global para verificar si está en reproducción
 
 function play(nombre) {
-    alert('hola');
-if ('speechSynthesis' in window) {
-            alert('SpeechSynthesis está disponible');
-        } else {
-            alert('SpeechSynthesis no está disponible');
-        }
+
     detenerTodo();
    // playAudio();
     // Verifica que la API SpeechSynthesis esté disponible
