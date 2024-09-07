@@ -12,12 +12,6 @@
 }
     
     
-if ('speechSynthesis' in window) {
-        alert('SpeechSynthesis está disponible');
-    } else {
-        alert('SpeechSynthesis no está disponible');
-    }
-    
 
     
 
